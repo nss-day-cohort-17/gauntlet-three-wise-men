@@ -1,3 +1,5 @@
+var weaponsList = [];
+
 var Weapon = function() {
   this.name = "bare hands";
   this.damage = 1;
@@ -29,3 +31,20 @@ var WarAxe = function() {
 };
 WarAxe.prototype = new Weapon();
 
+
+weaponsList.push(new Dagger())
+weaponsList.push(new BroadSword())
+weaponsList.push(new WarAxe())
+
+console.log(weaponsList)
+
+
+function addWeaponsDOM () {
+  for(var i = 0; i < weaponsList.length; i++) {
+    if(i % 4 = 0) {
+
+    }
+  }
+}
+
+addWeaponsDOM()
