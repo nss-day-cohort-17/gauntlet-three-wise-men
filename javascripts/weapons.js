@@ -1,3 +1,5 @@
+var weaponsList = [];
+
 var Weapon = function() {
   this.name = "bare hands";
   this.damage = 1;
@@ -29,3 +31,29 @@ var WarAxe = function() {
 };
 WarAxe.prototype = new Weapon();
 
+
+weaponsList.push(new Dagger())
+weaponsList.push(new BroadSword())
+weaponsList.push(new WarAxe())
+
+console.log(weaponsList)
+
+
+function addWeaponsDOM () {
+  for(var i = 0; i < weaponsList.length; i++) {
+
+    // Add a new column if the index equals 4
+    if(i % 4 === 0) {
+      $(".addWeaponsHere").append(`<div class="weaponColumn col-sm-4"></div>`)
+    }
+
+    $(".weaponColumn").append(`  <div class="card__button">
+                                    <a class="class__link btn btn--big btn--blue" href="#">
+                                      <span class="btn__prompt"></span>
+                                      <span class="btn__text">${weaponsList[i].name}</span>
+                                    </a>
+                                </div>`)
+  }
+}
+
+addWeaponsDOM()
