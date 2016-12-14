@@ -17,6 +17,13 @@ console.log(orc.toString());
 var spell = new Gauntlet.SpellBook.Sphere();
 console.log("spell: ", spell.toString());
 
+/*
+Global variables for player name, class and weapon
+*/
+
+var playerName;
+var playerClass;
+var playerWeapon;
 
 $(document).ready(function() {
   /*
@@ -39,6 +46,9 @@ $(document).ready(function() {
       case "card--weapon":
         moveAlong = ($("#player-name").val() !== "");
         break;
+      case "card--battlefield":
+        moveAlong = ($("#player-name").val() !== "");
+        break;
     }
 
     if (moveAlong) {
@@ -55,5 +65,21 @@ $(document).ready(function() {
     $(".card").hide();
     $("." + previousCard).show();
   });
+
+  //Below here add eventlisteners to approproate buttons/fields
+
+  $('.selectClass').click(function () {
+    console.log('selectClassButtonClicked')
+    playerName = $('#player-name')[0].value
+    console.log($('#player-name')[0].value)
+    console.log(playerName);
+
+  })
+
+  $('.classButton').click(function() {
+    // console.log(e.target);
+    // console.log(e.target.$('.btn__text'));
+    console.log($(this).filter(".btn__text").context)
+  })
 
 });
