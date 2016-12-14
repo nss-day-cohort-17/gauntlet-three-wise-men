@@ -46,7 +46,7 @@ $(document).ready(function() {
       case "card--weapon":
         moveAlong = ($("#player-name").val() !== "");
         break;
-      case "card--battlefield":
+      case "card--battleground":
         moveAlong = ($("#player-name").val() !== "");
         break;
     }
@@ -71,15 +71,18 @@ $(document).ready(function() {
   $('.selectClass').click(function () {
     console.log('selectClassButtonClicked')
     playerName = $('#player-name')[0].value
-    console.log($('#player-name')[0].value)
     console.log(playerName);
 
   })
 
-  $('.classButton').click(function() {
-    // console.log(e.target);
-    // console.log(e.target.$('.btn__text'));
-    console.log($(this).filter(".btn__text").context)
+  $('.classButton').click(function(){
+
+    //console.log($(this).find('.btn__text').text())
+
+    playerClass = $(this).find('.btn__text').text()
+
+    console.log("playerClass", playerClass)
+
   })
 
 });
