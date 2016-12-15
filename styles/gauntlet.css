@@ -110,7 +110,7 @@ body {
 .centeredTitle {
   text-align: center;
   font-size: 2em;
-  margin: 1em;
+  margin: 1em 1em 0 1em;
 }
 .container {
   display: flex;
@@ -204,4 +204,10 @@ body {
   margin: 1em;
   border-radius: 0.3em;
   background-color: rgba(180,180,180,0.8);
+}
+
+/* Jared's CSS that is probably going to break Joel's */
+
+.back--battlefield {
+
 }
