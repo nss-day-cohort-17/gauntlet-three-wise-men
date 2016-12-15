@@ -117,7 +117,6 @@ $(document).ready(function() {
      else if (target.parent().hasClass("weaponButton")) {
       playerWeapon = target.text()
       hero.weapon = playerWeapon
-      console.log("new heroes weapon", playerWeapon)
     }
   })
 
