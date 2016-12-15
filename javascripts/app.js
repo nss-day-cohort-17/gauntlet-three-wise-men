@@ -80,6 +80,13 @@ $(document).ready(function() {
   // Add event listener to all class buttons
   $('.classButton').click(function(){
     playerClass = $(this).find('.btn__text').text()
+
+    if(playerClass.toLowerCase() === "surprise me") {
+      console.log("you should make a surprise")
+
+      // Implement the surprise - maybe make the player
+      // play as the default beggar class?
+    }
   })
 
   // Add event listener to all weapon buttons -- Added to the body because the weapons list is dynamically created
