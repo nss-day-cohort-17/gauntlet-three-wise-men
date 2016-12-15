@@ -1,8 +1,8 @@
 // --------------------------------------------------------------------------------- //
 function loadPlayer () {
-    $('#battlefieldHero').html(hero.playerName);
+    $('#battlefieldHero').html('bob');
     $('#weaponSelection').html(hero.weapon);
-    $('#heroSelection').html(hero.class);
+    $('#heroSelection').html(hero.class.name);
     $('#playerImage').attr('src', hero.image).width('120%');
     //$('#playerImage').html(hero.image);
     loadEnemy();
@@ -13,7 +13,8 @@ function loadEnemy() {
     $('#enemySelection').html(orc.species);
     $('#enemyImage').attr('src', orc.image).width('100%');
     removeClassColors();
-    loadPlayerStats();
+    var orcHealth = orc.health;
+    loadPlayerStats(orcHealth);
 }
 
 function loadPlayerStats(health) {
@@ -25,12 +26,13 @@ function loadPlayerStats(health) {
     let heroStrengthLocal = $('#heroStrength');
     heroStrengthLocal.width(heroStrengthNow);
 
-    let heroIntelligenceNow = (hero.intelligence * 1.3)
+    let heroIntelligenceNow = (hero.intelligence * 1.3);
     let heroIntelligenceLocal = $('#heroIntelligence');
     heroIntelligenceLocal.width(heroIntelligenceNow);
 
     addColorClass(heroHealthNow, heroHealthLocal, heroStrengthNow, heroStrengthLocal, heroIntelligenceNow, heroIntelligenceLocal);
-    loadEnemyStats();
+    let enemyHealth = orc.health;
+    loadEnemyStats(enemyHealth);
 }
 
 function loadEnemyStats(health) {
@@ -83,60 +85,45 @@ function addColorClass(healthNow, healthLocal, strengthNow, stengthLocal, intell
     }
 }
 
-
 // Function to calculate damage on attack button click
 function getWeaponDamage(heroWeaponName){
-
     heroWeaponName = heroWeaponName.split(' ')
-
     for(var i = 0; i < heroWeaponName.length; i++){
-
         heroWeaponName[i] = heroWeaponName[i].split('')
-
         heroWeaponName[i][0] = heroWeaponName[i][0].toUpperCase()
-
         heroWeaponName[i] = heroWeaponName[i].join('')
     }
-
     return heroWeaponName.join('')
 }
 
 
 function attackEachOther() {
     console.log("attackEachOther function called")
-
     // Hero attacks first
-
         // Calculate Heroes attack damage
+        var weaponName = getWeaponDamage(hero.weapon);
+        var heroWeapon = eval(weaponName);
+        var getWeapon = new heroWeapon;
+        var damage = getWeapon.damage;
+        console.log("damage", damage);
 
-            // Get attack Damage
-            var weaponName = getWeaponDamage(hero.weapon)
-            var heroWeapon = eval(weaponName)
-            var getWeapon = new heroWeapon
-            var damage = getWeapon.damage
-            console.log(damage)
-
-            var heroAttack = (1/hero.strength) + damage
-            console.log(heroAttack)
+        var heroAttack = (100/hero.strength) * damage;
+        console.log("attack", heroAttack);
 
         // Remove attack damage from enemy health
+        orc.health = orc.health - heroAttack;
+        console.log("orc health", orc.health);
 
-            orc.health = orc.health - heroAttack
-            console.log(orc.health)
-
-        // Display enemys health on DOM
-
-            loadEnemyStats(orc.health)
-            //ngrab div the enemys
+        // Display enemy's health on DOM
+        loadEnemyStats(orc.health);
 
     // Check if enemy is dead
-
-        if(orc.health <= 0) {
+        if (orc.health <= 0) {
             // If enemy is dead hero wins - end game
+            alert("Game over. You win!!!");
         }
 
     // Enemy attacks
-
         // Calculate enemy damage
         var orcDamage = orc.weapon.damage
 
@@ -145,12 +132,12 @@ function attackEachOther() {
         hero.health = hero.health - orcDamage
         console.log(hero.health)
 
-        // display heros health on DOM
-        loadPlayerStats(hero.health)
+        // display heroes health on DOM
+        loadPlayerStats(hero.health);
 
     // Check if Hero is dead
-
-        if(hero.health <= 0){
+        if (hero.health <= 0){
             // if hero is dead enemy wins - end game
+            alert('Game over. You lose.')
         }
 }
