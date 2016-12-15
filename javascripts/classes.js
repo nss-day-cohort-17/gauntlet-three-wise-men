@@ -96,6 +96,7 @@ Gauntlet.GuildHall.Wizard = function() {
   this.healthBonus = this.healthBonus - 15;
   this.strengthBonus = this.strengthBonus - 25;
   this.intelligenceBonus = this.intelligenceBonus + 40;
+  this.image = "../images/wizard.svg";
 };
 Gauntlet.GuildHall.Wizard.prototype = new Gauntlet.GuildHall.Mage();
 
