@@ -4,12 +4,12 @@
 var warrior = new Gauntlet.Combatants.Human();
 warrior.setWeapon(new WarAxe());
 warrior.generateClass();  // This will be used for "Surprise me" option
-console.log(warrior.toString());
+
 
 var orc = new Gauntlet.Combatants.Orc();
 orc.generateClass();
 orc.setWeapon(new BroadSword());
-console.log(orc.toString());
+
 
 /****************************************/
 /*      Creating a new Hero              */
@@ -21,7 +21,7 @@ var hero;
   Test code to generate a spell
  */
 var spell = new Gauntlet.SpellBook.Sphere();
-console.log("spell: ", spell.toString());
+
 
 /*
 Global variables for player name, class and weapon
@@ -84,7 +84,6 @@ $(document).ready(function() {
 
     // Create new hero object with a name
     hero = new Gauntlet.Combatants.Player(playerName)
-    console.log("new heroes name", hero.playerName)
   })
 
   // Add event listener to all class buttons
@@ -92,9 +91,7 @@ $(document).ready(function() {
     playerClass = $(this).find('.btn__text').text()
 
     hero.class = playerClass
-    console.log("new heroes class", hero.class)
     if(playerClass.toLowerCase() === "surprise me") {
-      console.log("you should make a surprise")
 
       // Implement the surprise - maybe make the player
       // play as the default beggar class?

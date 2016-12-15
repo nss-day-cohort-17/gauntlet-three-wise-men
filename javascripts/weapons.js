@@ -49,7 +49,6 @@ weaponsList.push(new WarAxe())
 weaponsList.push(new WarAxe())
 weaponsList.push(new WarAxe())
 
-console.log(weaponsList)
 
 
 function addWeaponsDOM () {
@@ -62,7 +61,6 @@ function addWeaponsDOM () {
     if(i % 4 === 0) {
       $(".addWeaponsHere").append(`<div class="weaponColumn col-sm-4"></div>`)
       //console.log($('.weaponColumn'))
-      console.log($('body').find('.weaponColumn'))
       //console.log("how many columns weapons", $("body").find(".weaponColumn"))
       columnCount++;
     }
