@@ -21,16 +21,38 @@ function loadPlayerStats() {
 // Function to calculate damage on attack button click
 
 
+function getWeaponDamage(heroWeaponName){
+
+    heroWeaponName = heroWeaponName.split(' ')
+
+    for(var i = 0; i < heroWeaponName.length; i++){
+
+        heroWeaponName[i] = heroWeaponName[i].split('')
+
+        heroWeaponName[i][0] = heroWeaponName[i][0].toUpperCase()
+
+        heroWeaponName[i] = heroWeaponName[i].join('')
+    }
+
+    return heroWeaponName.join('')
+}
+
+
 function attackEachOther() {
     console.log("attackEachOther function called")
 
     // Hero attacks first
 
         // Calculate Heroes attack damage
-        console.log(hero.strength)
-        console.log(hero.weapon)
 
-        var heroAttack = hero.strength + hero.weapon
+            // Get attack Damage
+            var weaponName = getWeaponDamage(hero.weapon)
+            var heroWeapon = eval(weaponName)
+            var getWeapon = new heroWeapon
+            var damage = getWeapon.damage
+            console.log(damage)
+
+            //var heroAttack = hero.strength + heroWeaponDamage
 
         // Remove attack damage from enemy health
 
