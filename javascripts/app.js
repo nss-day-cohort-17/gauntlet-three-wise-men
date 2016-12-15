@@ -17,6 +17,13 @@ console.log(orc.toString());
 var spell = new Gauntlet.SpellBook.Sphere();
 console.log("spell: ", spell.toString());
 
+/*
+Global variables for player name, class and weapon
+*/
+
+var playerName;
+var playerClass;
+var playerWeapon;
 
 $(document).ready(function() {
   /*
@@ -39,6 +46,9 @@ $(document).ready(function() {
       case "card--weapon":
         moveAlong = ($("#player-name").val() !== "");
         break;
+      case "card--battleground":
+        moveAlong = ($("#player-name").val() !== "");
+        break;
     }
 
     if (moveAlong) {
@@ -56,4 +66,50 @@ $(document).ready(function() {
     $("." + previousCard).show();
   });
 
+  /*-----------------------------------------------------------------------*/
+  //    Below here add eventlisteners to appropriate buttons/fields
+  /*-----------------------------------------------------------------------*/
+
+
+  // Add event listener to the select class button which is on the choose your name page
+  $('.selectClass').click(function () {
+    playerName = $('#player-name')[0].value
+    //console.log("playerName", playerName);
+  })
+
+  // Add event listener to all class buttons
+  $('.classButton').click(function(){
+    playerClass = $(this).find('.btn__text').text()
+
+    if(playerClass.toLowerCase() === "surprise me") {
+      console.log("you should make a surprise")
+
+      // Implement the surprise - maybe make the player
+      // play as the default beggar class?
+    }
+  })
+
+  // Add event listener to all weapon buttons -- Added to the body because the weapons list is dynamically created
+  $('body').click(function(event){
+
+    // Do not use "this" because it returns the entire body on click
+    // must use event.target in order to get the clicked element
+
+    var target = $(event.target) // put event.target in a jquery object
+
+    // Check to see if a weapon button is clicked or a child whose parent is a button
+    if(target.hasClass("weaponButton")) {
+      playerWeapon = target.find('.btn__text').text()
+      console.log(playerWeapon)
+    }
+     else if (target.parent().hasClass("weaponButton")) {
+      playerWeapon = target.text()
+    }
+  })
 });
+
+
+// Event listener on the battlefield button to load the player and enemy to the page // load to app.js
+$('a[next="card--battleground"]').on('click', () => {
+    loadPlayer();
+})
