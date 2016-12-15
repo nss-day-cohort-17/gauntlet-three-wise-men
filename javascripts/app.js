@@ -4,19 +4,34 @@
 var warrior = new Gauntlet.Combatants.Human();
 warrior.setWeapon(new WarAxe());
 warrior.generateClass();  // This will be used for "Surprise me" option
-console.log(warrior.toString());
+
 
 var orc = new Gauntlet.Combatants.Orc();
 orc.generateClass();
 orc.setWeapon(new BroadSword());
-console.log(orc.toString());
+
+
+/****************************************/
+/*      Creating a new Hero              */
+/****************************************/
+
+var hero;
+
+var scott = new Gauntlet.Combatants.ScottHumphries()
 
 /*
   Test code to generate a spell
  */
 var spell = new Gauntlet.SpellBook.Sphere();
-console.log("spell: ", spell.toString());
 
+
+/*
+Global variables for player name, class and weapon
+*/
+
+var playerName;
+var playerClass;
+var playerWeapon;
 
 $(document).ready(function() {
   /*
@@ -37,7 +52,10 @@ $(document).ready(function() {
         moveAlong = ($("#player-name").val() !== "");
         break;
       case "card--weapon":
-        moveAlong = ($("#player-name").val() !== "");
+        moveAlong = ($(".classButton").hasClass("borderClick") ===  true);
+        break;
+      case "card--battleground":
+        moveAlong = ($(".weaponButton").hasClass("borderClick") === true);
         break;
     }
 
@@ -56,4 +74,92 @@ $(document).ready(function() {
     $("." + previousCard).show();
   });
 
+  /*-----------------------------------------------------------------------*/
+  //    Below here add eventlisteners to appropriate buttons/fields
+  /*-----------------------------------------------------------------------*/
+
+
+  // Add event listener to the select class button which is on the choose your name page
+  $('.selectClass').click(function () {
+    playerName = $('#player-name')[0].value
+    //console.log("playerName", playerName);
+
+    // Create new hero object with a name
+    hero = new Gauntlet.Combatants.Player(playerName)
+  })
+
+  // Add event listener to all class buttons
+  $('.classButton').click(function(){
+    playerClass = $(this).find('.btn__text').text()
+// hero = new wizard based on button clicked...
+    hero.class = playerClass
+    if(playerClass.toLowerCase() === "surprise me") {
+
+      // Implement the surprise - maybe make the player
+      // play as the default beggar class?
+    }
+  })
+
+  // Add event listener to all weapon buttons -- Added to the body because the weapons list is dynamically created
+  $('body').click(function(event){
+
+    // Do not use "this" because it returns the entire body on click
+    // must use event.target in order to get the clicked element
+
+    var target = $(event.target) // put event.target in a jquery object
+
+    // Check to see if a weapon button is clicked or a child whose parent is a button
+    if(target.hasClass("weaponButton")) {
+      playerWeapon = target.find('.btn__text').text()
+      //console.log(target)
+      hero.weapon = playerWeapon
+      console.log("new heroes weapon", playerWeapon)
+    }
+     else if (target.parent().hasClass("weaponButton")) {
+      playerWeapon = target.text()
+      //console.log(target)
+      hero.weapon = playerWeapon
+    }
+  })
+
+
+  // Event listener on the battlefield button to load the player and enemy to the page // load to app.js
+  $('a[next="card--battleground"]').on('click', () => {
+    loadPlayer();
+  })
+
+
+  // Event listener to attack button and call attackEachOther function when clicked
+  $('#attackBttn').click(function(){
+    //console.log("Attack button clicked!")
+
+    attackEachOther()
+  });
+
+
+
 });
+
+// When a class type button has focus, add a class to it and remove the class when another class type button has focus.
+$('.classButton').focus(function(event) {
+  var target = $(event.target)
+  if(target.hasClass('classButton')) {
+    $('.classButton').removeClass('borderClick')
+    target.addClass('borderClick')
+  } else if (target.parent().hasClass('classButton')) {
+    target.parent().addClass('borderClick')
+    $('.borderClick').removeClass('borderClick')
+  }
+})
+
+
+$('.weaponButton').focus(function(event) {
+  var target = $(event.target)
+  if(target.hasClass('weaponButton')) {
+    $('.weaponButton').removeClass('borderClick')
+    target.addClass('borderClick')
+  } else if (target.parent().hasClass('weaponButton')) {
+    target.parent().addClass('borderClick')
+    $('.borderClick').removeClass('borderClick')
+  }
+})

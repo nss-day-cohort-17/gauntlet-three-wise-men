@@ -3,6 +3,9 @@ body {
   margin: 0;
   padding: 10px;
   font-size: 3em;
+  background-image: url("http://svn.gna.org/svn/wesnoth/branches/water_animation/data/core/images/story/landscape-battlefield_nohumans.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .field {
@@ -16,12 +19,10 @@ body {
   min-width: 500px;
 }
 
-
-
 /*
   Section styles
  */
-.card { 
+.card {
   display: none;
 }
 
@@ -55,6 +56,7 @@ body {
   font-weight: 600;
   padding: 10px 5px;
   min-width: 260px;
+  border: .1em solid black;
 }
 
 .btn--orange {
@@ -102,4 +104,123 @@ body {
 .btn__text {
   padding: 0 50px 0 20px;
   border-radius: 0 5px 5px 0;
+}
+
+
+/* Joel's CSS styling needs to be reorganized. */
+.centeredTitle {
+  text-align: center;
+  font-size: 2em;
+  margin: 0 1em;
+  text-shadow: 2px 2px 2px white;
+}
+.container {
+  display: flex;
+  justify-content: center;
+}
+.battlefieldDivs {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: center;
+  max-width: 300px;
+}
+#attackBttn {
+  border-radius: 0.2em;
+  padding: 0 0.3em;
+  background-color: red;
+  max-width: 4em;
+  margin: 0 auto;
+}
+.smallerTopMargin {
+  margin: 0.3em auto;
+}
+.meter {
+  height: 10px;  /* Can be anything */
+  position: relative;
+  background: #555;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  border-radius: 25px;
+  padding: 5px;
+  box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+}
+.green {
+  background-color: green;
+  background-image: linear-gradient(to bottom, green, darkgreen);
+}
+.yellow {
+  background-color: #FCFA9D;
+  background-image: linear-gradient(to bottom, #FCFA9D, #FAF502);
+}
+.red {
+  background-color: #FCFA9D;
+  background-image: linear-gradient(to bottom, #f0a3a3, #f42323);
+}
+.grayBack {
+  background-color: rgba(180,180,180,0.8);
+  padding: 0.5em;
+  border-radius: 1em;
+  border: 1px solid black;
+}
+.grayBack h2 {
+  margin: .1em auto .4em auto;
+}
+.grayBack p {
+  font-size: 0.5em;
+  margin: 0.2em auto;
+}
+.boxed {
+  border: 1px solid black;
+  border-radius: 1em;
+  padding: 0.2em;
+  background-color: rgba(180,180,180,0.8);
+}
+.centerDiv {
+  justify-content: center;
+}
+#battleResults {
+  border: 2px solid green;
+  margin: 1em;
+  border-radius: 0.3em;
+  background-color: rgba(180,180,180,0.8);
+}
+
+/* Jared's CSS that is probably going to break Joel's */
+
+.back--battlefield {
+ margin-bottom: 1.5em;
+}
+
+.card__back {
+  max-width: 6em;
+}
+
+.headline {
+  color: black;
+  text-shadow: 2px 2px 1px white;
+}
+
+.card__link {
+  background-color: #b2b2ac;
+  border: 2px solid black;
+}
+
+.classButton {
+  background-color: #73593b;
+  border: 2px solid #73593b;
+}
+
+.weaponButton {
+  background-color: #c93200;
+  border: 2px solid #c93200;
+  max-width: 8em;
+}
+
+.buttonSurprise {
+  background-color: #816426;
+}
+
+.borderClick {
+  border: 4px solid black;
 }
