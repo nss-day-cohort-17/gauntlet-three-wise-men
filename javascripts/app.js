@@ -139,13 +139,25 @@ $(document).ready(function() {
 
 });
 
-//when clicking a class, add a border to it
-$('.classButton').focus(function(e) {
+// When a class type button has focus, add a class to it and remove the class when another class type button has focus.
+$('.classButton').focus(function(event) {
   var target = $(event.target)
   if(target.hasClass('classButton')) {
     $('.classButton').removeClass('borderClick')
     target.addClass('borderClick')
   } else if (target.parent().hasClass('classButton')) {
+    target.parent().addClass('borderClick')
+    $('.borderClick').removeClass('borderClick')
+  }
+})
+
+
+$('.weaponButton').focus(function(event) {
+  var target = $(event.target)
+  if(target.hasClass('weaponButton')) {
+    $('.weaponButton').removeClass('borderClick')
+    target.addClass('borderClick')
+  } else if (target.parent().hasClass('weaponButton')) {
     target.parent().addClass('borderClick')
     $('.borderClick').removeClass('borderClick')
   }
