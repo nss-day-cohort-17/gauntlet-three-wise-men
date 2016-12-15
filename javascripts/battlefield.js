@@ -16,8 +16,8 @@ function loadEnemy() {
     loadPlayerStats();
 }
 
-function loadPlayerStats() {
-    let heroHealthNow = (hero.health * 1.3);
+function loadPlayerStats(health) {
+    let heroHealthNow = (health * 1.3);
     let heroHealthLocal = $('#heroHealth');
     heroHealthLocal.width(heroHealthNow);
 
@@ -33,8 +33,8 @@ function loadPlayerStats() {
     loadEnemyStats();
 }
 
-function loadEnemyStats() {
-    let enemyHealthNow = (orc.health * 1.3);
+function loadEnemyStats(health) {
+    let enemyHealthNow = (health * 1.3);
     let enemyHealthLocal = $('#enemyHealth');
     enemyHealthLocal.width(enemyHealthNow);
 
@@ -128,6 +128,9 @@ function attackEachOther() {
 
         // Display enemys health on DOM
 
+            loadEnemyStats(orc.health)
+            //ngrab div the enemys
+
     // Check if enemy is dead
 
         if(orc.health <= 0) {
@@ -145,6 +148,7 @@ function attackEachOther() {
         console.log(hero.health)
 
         // display heros health on DOM
+        loadPlayerStats(hero.health)
 
     // Check if Hero is dead
 
