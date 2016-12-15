@@ -66,20 +66,46 @@ $(document).ready(function() {
     $("." + previousCard).show();
   });
 
-  //Below here add eventlisteners to approproate buttons/fields
+  /*-----------------------------------------------------------------------*/
+  //    Below here add eventlisteners to approproate buttons/fields
+  /*-----------------------------------------------------------------------*/
 
+
+  // Add event listener to the select class button which is on the choose your name page
   $('.selectClass').click(function () {
-    console.log('selectClassButtonClicked')
     playerName = $('#player-name')[0].value
-    console.log($('#player-name')[0].value)
-    console.log(playerName);
-
+    //console.log("playerName", playerName);
   })
 
-  $('.classButton').click(function() {
-    // console.log(e.target);
-    // console.log(e.target.$('.btn__text'));
-    console.log($(this).filter(".btn__text").context)
+  // Add event listener to all class buttons
+  $('.classButton').click(function(){
+    playerClass = $(this).find('.btn__text').text()
+
+    if(playerClass.toLowerCase() === "surprise me") {
+      console.log("you should make a surprise")
+
+      // Implement the surprise - maybe make the player
+      // play as the default beggar class?
+    }
+  })
+
+  // Add event listener to all weapon buttons -- Added to the body because the weapons list is dynamically created
+  $('body').click(function(event){
+
+    // Do not use "this" because it returns the entire body on click
+    // must use event.target in order to get the clicked element
+
+    var target = $(event.target) // put event.target in a jquery object
+
+    // Check to see if a weapon button is clicked or a child whose parent is a button
+    if(target.hasClass("weaponButton")) {
+      playerWeapon = target.find('.btn__text').text()
+      console.log(playerWeapon)
+    }
+     else if (target.parent().hasClass("weaponButton")) {
+      playerWeapon = target.text()
+    }
+
   })
 
 });
