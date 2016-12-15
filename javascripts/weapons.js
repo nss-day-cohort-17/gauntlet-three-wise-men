@@ -35,10 +35,9 @@ WarAxe.prototype = new Weapon();
 weaponsList.push(new Dagger())
 weaponsList.push(new BroadSword())
 weaponsList.push(new WarAxe())
+weaponsList.push(new Weapon())
 
 // below is just for testing
-weaponsList.push(new WarAxe())
-
 weaponsList.push(new WarAxe())
 weaponsList.push(new WarAxe())
 weaponsList.push(new WarAxe())
