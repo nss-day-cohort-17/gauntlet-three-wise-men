@@ -46,7 +46,7 @@ $(document).ready(function() {
       case "card--weapon":
         moveAlong = ($("#player-name").val() !== "");
         break;
-      case "card--battlefield":
+      case "card--battleground":
         moveAlong = ($("#player-name").val() !== "");
         break;
     }
