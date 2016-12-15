@@ -26,6 +26,12 @@ function attackEachOther() {
 
     // Hero attacks first
 
+        // Calculate Heroes attack damage
+        console.log(hero.strength)
+        console.log(hero.weapon)
+
+        var heroAttack = hero.strength + hero.weapon
+
         // Remove attack damage from enemy health
 
         // Display enemys health on DOM

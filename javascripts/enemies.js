@@ -1,3 +1,5 @@
+
+// Default monster
 Gauntlet.Combatants.Orc = function() {
   this.health = this.health + 20;
   this.species = "Orc";
@@ -19,7 +21,7 @@ Gauntlet.Combatants.Orc = function() {
 
 Gauntlet.Combatants.Orc.prototype = new Gauntlet.Combatants.Monster();
 
-
+// Mega Boss
 Gauntlet.Combatants.ScottHumphries = function() {
   this.health = this.health + 20;
   this.species = "Human";
