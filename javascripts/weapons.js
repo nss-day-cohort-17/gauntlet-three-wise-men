@@ -48,7 +48,7 @@ function addWeaponsDOM () {
     }
 
     $(".weaponColumn").append(`  <div class="card__button">
-                                    <a class="class__link btn btn--big btn--blue" href="#">
+                                    <a class="weaponButton class__link btn btn--big btn--blue" href="#">
                                       <span class="btn__prompt"></span>
                                       <span class="btn__text">${weaponsList[i].name}</span>
                                     </a>

@@ -66,22 +66,39 @@ $(document).ready(function() {
     $("." + previousCard).show();
   });
 
-  //Below here add eventlisteners to approproate buttons/fields
+  /*-----------------------------------------------------------------------*/
+  //    Below here add eventlisteners to approproate buttons/fields
+  /*-----------------------------------------------------------------------*/
 
+
+  // Add event listener to the select class button which is on the choose your name page
   $('.selectClass').click(function () {
-    console.log('selectClassButtonClicked')
     playerName = $('#player-name')[0].value
-    console.log(playerName);
-
+    //console.log("playerName", playerName);
   })
 
+  // Add event listener to all class buttons
   $('.classButton').click(function(){
-
-    //console.log($(this).find('.btn__text').text())
-
     playerClass = $(this).find('.btn__text').text()
+    //console.log("playerClass", playerClass)
+  })
 
-    console.log("playerClass", playerClass)
+  // Add event listener to all weapon buttons -- Added to the body because the weapons list is dynamically created
+  $('body').click(function(event){
+
+    // Do not use "this" because it returns the entire body on click
+    // must use event.target in order to get the clicked element
+    console.log(event.target)
+
+    var target = $(event.target) // put event.target in a jquery object
+
+    // Check to see if a weapon button is clicked or a child whose parent is a button
+    if(target.hasClass("weaponButton")) {
+      console.log("weapon button found")
+    }
+     else if (target.parent().hasClass("weaponButton")) {
+      console.log("span is child of weaponButton")
+    }
 
   })
 
