@@ -3,12 +3,15 @@ function loadPlayer () {
     $('#battlefieldHero').html(hero.playerName);
     $('#weaponSelection').html(hero.weapon);
     $('#heroSelection').html(hero.class);
+    $('#playerImage').attr('src', hero.image).width('120%');
+    //$('#playerImage').html(hero.image);
     loadEnemy();
 }
 
 function loadEnemy() {
     $('#enemyWeaponSelection').html(orc.weapon.name);
     $('#enemySelection').html(orc.species);
+    $('#enemyImage').attr('src', orc.image).width('100%');
     removeClassColors();
     loadPlayerStats();
 }

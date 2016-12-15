@@ -4,8 +4,8 @@ Gauntlet.Combatants.Orc = function() {
   this.health = this.health + 20;
   this.species = "Orc";
   this.allowedClasses = ["Warrior", "Berserker", "Shaman"];
-  this.image = "http://www.stefonmears.com/wp-content/uploads/2013/01/Another-Orc-by-phew_album.jpg"
-  this.weapon = new WarAxe()
+  this.image = "images/orc.svg";
+  this.weapon = new WarAxe();
 
   this.generateClass = function() {
     // Get a random index from the allowed classes array

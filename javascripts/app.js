@@ -91,7 +91,7 @@ $(document).ready(function() {
   // Add event listener to all class buttons
   $('.classButton').click(function(){
     playerClass = $(this).find('.btn__text').text()
-
+// hero = new wizard based on button clicked...
     hero.class = playerClass
     if(playerClass.toLowerCase() === "surprise me") {
 
