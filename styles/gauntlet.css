@@ -109,7 +109,8 @@ body {
 /* Joel's CSS styling needs to be reorganized. */
 .centeredTitle {
   text-align: center;
-  font-size: 2.5em;
+  font-size: 2em;
+  margin: 1em;
 }
 .container {
   display: flex;
@@ -120,10 +121,9 @@ body {
   flex-direction: column;
   flex-grow: 1;
   text-align: center;
-  max-width: 250px;
+  max-width: 300px;
 }
 #attackBttn {
-  font-size: 3em;
   border-radius: 0.2em;
   padding: 0 0.3em;
   background-color: red;
@@ -162,25 +162,32 @@ body {
   position: relative;
   overflow: hidden;
 }
-.yellow > span {
+.green {
+  background-color: green;
+  background-image: linear-gradient(to bottom, green, darkgreen);
+  width: 50%;
+}
+.yellow {
   background-color: #FCFA9D;
   background-image: linear-gradient(to bottom, #FCFA9D, #FAF502);
+  width: 90%;
 }
-
-.red > span {
-  background-color: FCFA9D;
+.red {
+  background-color: #FCFA9D;
   background-image: linear-gradient(to bottom, #f0a3a3, #f42323);
+  width: 75%;
 }
 .grayBack {
   background-color: rgba(180,180,180,0.8);
   padding: 0.5em;
   border-radius: 1em;
+  border: 1px solid black;
 }
 .grayBack h2 {
   margin: .1em auto .4em auto;
 }
 .grayBack p {
-  font-size: 1.1em;
+  font-size: 0.5em;
   margin: 0.2em auto;
 }
 .boxed {
@@ -194,7 +201,7 @@ body {
 }
 #battleResults {
   border: 2px solid green;
-  margin: 2em;
+  margin: 1em;
   border-radius: 0.3em;
   background-color: rgba(180,180,180,0.8);
 }

@@ -186,52 +186,54 @@
     <section id="battleground" class="card card--battleground">
       <h1 class="centeredTitle">Battlefield</h1>
       <div class="container">
-        <div class="battlefieldDivs">
-          <div class="grayBack">
-            <h2>Player Stats</h2>
-            <p>Health</p>
-            <div class="meter green">
-              <span style="width: 70%"></span>
+        <div class="row">
+          <div class="battlefieldDivs col-sm-4">
+            <div class="grayBack">
+              <h2>Player Stats</h2>
+              <p>Health</p>
+              <div class="meter red">
+                <span style="width: 70%"></span>
+              </div>
+              <p>Strength</p>
+              <div class="meter yellow">
+                <span style="width: 50%"></span>
+              </div>
+              <p>Intelligence</p>
+              <div class="meter green">
+                <span style="width: 90%"></span>
+              </div>
             </div>
-            <p>Strength</p>
-            <div class="meter yellow">
-              <span style="width: 50%"></span>
-            </div>
-            <p>Intelligence</p>
-            <div class="meter green">
-              <span style="width: 90%"></span>
+            <h1 class="boxed" id="weaponSelection">Weapon</h1>
+            <h1 class="boxed" id="heroSelection">Hero</h1>
+          </div>
+          <div class="battlefieldDivs centerDiv col-sm-4">
+            <button id="attackBttn">Attack!</button>
+            <div id="battleResults">
+              <h1>Results:</h1>
+              <h3>Your hero,</h3>
+              <h2>Name</h2>
+              <h3>has been defeated</h3>
             </div>
           </div>
-          <h1 class="boxed" id="weaponSelection">Weapon</h1>
-          <h1 class="boxed" id="heroSelection">Hero</h1>
-        </div>
-        <div class="battlefieldDivs centerDiv">
-          <button id="attackBttn">Attack!</button>
-          <div id="battleResults">
-            <h1>Results:</h1>
-            <h3>Your hero,</h3>
-            <h2>Name</h2>
-            <h3>has been defeated</h3>
+          <div class="battlefieldDivs col-sm-4">
+            <div class="grayBack">
+              <h2>Enemy Stats</h2>
+              <p>Health</p>
+              <div class="meter red">
+                <span></span>
+              </div>
+              <p>Strength</p>
+              <div class="meter green">
+                <span></span>
+              </div>
+              <p>Intelligence</p>
+              <div class="meter yellow">
+                <span></span>
+              </div>
+            </div>
+            <h1 class="boxed" id="enemyWeaponSelection">Weapon</h1>
+            <h1 class="boxed" id="enemySelection">Villain</h1>
           </div>
-        </div>
-        <div class="battlefieldDivs">
-          <div class="grayBack">
-            <h2>Enemy Stats</h2>
-            <p>Health</p>
-            <div class="meter red">
-              <span style="width: 20%"></span>
-            </div>
-            <p>Strength</p>
-            <div class="meter green">
-              <span style="width: 99%"></span>
-            </div>
-            <p>Intelligence</p>
-            <div class="meter yellow">
-              <span style="width: 40%"></span>
-            </div>
-          </div>
-          <h1 class="boxed" id="enemyWeaponSelection">Weapon</h1>
-          <h1 class="boxed" id="enemySelection">Villain</h1>
         </div>
       </div>
     </section>
