@@ -73,7 +73,7 @@ $(document).ready(function() {
   });
 
   /*-----------------------------------------------------------------------*/
-  //    Below here add eventlisteners to approproate buttons/fields
+  //    Below here add eventlisteners to appropriate buttons/fields
   /*-----------------------------------------------------------------------*/
 
 
@@ -120,7 +120,11 @@ $(document).ready(function() {
       hero.weapon = playerWeapon
       console.log("new heroes weapon", playerWeapon)
     }
-
   })
-
 });
+
+
+// Event listener on the battlefield button to load the player and enemy to the page // load to app.js
+$('a[next="card--battleground"]').on('click', () => {
+    loadPlayer();
+})
