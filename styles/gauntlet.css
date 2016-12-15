@@ -214,11 +214,28 @@ body {
  margin-bottom: 1.5em;
 }
 
-.borderClick {
-  border: 4px solid black;
-}
 
 .headline {
   color: black;
   text-shadow: 2px 2px 1px white;
+}
+
+.card__link {
+  background-color: #297c33;
+  border: 2px solid black;
+}
+
+.classButton {
+  background-color: #917351;
+  border: 2px solid #917351;
+}
+
+.weaponButton {
+  background-color: #c60000;
+  border: 2px solid #c60000;
+  max-width: 4em;
+}
+
+.borderClick {
+  border: 4px solid black;
 }
