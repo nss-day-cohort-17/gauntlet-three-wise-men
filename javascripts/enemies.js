@@ -1,8 +1,11 @@
+
+// Default monster
 Gauntlet.Combatants.Orc = function() {
   this.health = this.health + 20;
   this.species = "Orc";
   this.allowedClasses = ["Warrior", "Berserker", "Shaman"];
-  this.image = "images/orc.svg"
+  this.image = "images/orc.svg";
+  this.weapon = new WarAxe();
 
   this.generateClass = function() {
     // Get a random index from the allowed classes array
@@ -19,7 +22,7 @@ Gauntlet.Combatants.Orc = function() {
 
 Gauntlet.Combatants.Orc.prototype = new Gauntlet.Combatants.Monster();
 
-
+// Mega Boss
 Gauntlet.Combatants.ScottHumphries = function() {
   this.health = this.health + 20;
   this.species = "Human";

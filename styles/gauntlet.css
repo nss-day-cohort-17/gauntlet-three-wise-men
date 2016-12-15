@@ -192,6 +192,9 @@ body {
  margin-bottom: 1.5em;
 }
 
+.card__back {
+  max-width: 6em;
+}
 
 .headline {
   color: black;
@@ -199,19 +202,23 @@ body {
 }
 
 .card__link {
-  background-color: #297c33;
+  background-color: #b2b2ac;
   border: 2px solid black;
 }
 
 .classButton {
-  background-color: #917351;
-  border: 2px solid #917351;
+  background-color: #73593b;
+  border: 2px solid #73593b;
 }
 
 .weaponButton {
-  background-color: #c60000;
-  border: 2px solid #c60000;
-  max-width: 4em;
+  background-color: #c93200;
+  border: 2px solid #c93200;
+  max-width: 8em;
+}
+
+.buttonSurprise {
+  background-color: #816426;
 }
 
 .borderClick {
