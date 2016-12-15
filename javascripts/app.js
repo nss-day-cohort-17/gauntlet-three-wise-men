@@ -91,8 +91,49 @@ $(document).ready(function() {
   // Add event listener to all class buttons
   $('.classButton').click(function(){
     playerClass = $(this).find('.btn__text').text()
-// hero = new wizard based on button clicked...
-    hero.class = playerClass
+    // hero = new wizard based on button clicked...
+    //hero.class = playerClass
+
+
+    switch (playerClass.toLowerCase()) {
+      case "warrior":
+        hero.class = new Gauntlet.GuildHall.Warrior();
+        console.log("made a warrior hero")
+        break;
+      case "valkyrie":
+        hero.class = new Gauntlet.GuildHall.Valkyrie();
+        console.log("made a valkyrie hero")
+        break;
+      case "berserker":
+        hero.class = new Gauntlet.GuildHall.Berserker();
+        break;
+      case "monk":
+        hero.class = new Gauntlet.GuildHall.Monk();
+        break;
+      case "wizard":
+        hero.class = new Gauntlet.GuildHall.Wizard();
+        break;
+      case "sorcerer":
+        hero.class = new Gauntlet.GuildHall.Sorcerer();
+        break;
+      case "conjurer":
+        hero.class = new Gauntlet.GuildHall.Conjurer();
+        break;
+      case "thief":
+        hero.class = new Gauntlet.GuildHall.Thief();
+        break;
+      case "ninja":
+        hero.class = new Gauntlet.GuildHall.Ninja();
+        break;
+      case "assassin":
+        hero.class = new Gauntlet.GuildHall.Assassin();
+        break;
+      case "shaman":
+        hero.class = new Gauntlet.GuildHall.Shaman();
+        break;
+
+    }
+
     if(playerClass.toLowerCase() === "surprise me") {
 
       // Implement the surprise - maybe make the player
