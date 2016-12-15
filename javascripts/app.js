@@ -109,3 +109,15 @@ $(document).ready(function() {
   })
 
 });
+
+//when clicking a class, add a border to it
+$('a').click(function(e) {
+  var target = $(event.target)
+  if(target.hasClass('classButton')) {
+    target.addClass('borderClick')
+    console.log('hello')
+  } else if (target.parent().hasClass('classButton')) {
+    target.parent().addClass('borderClick')
+    console.log('hello')
+  }
+})
