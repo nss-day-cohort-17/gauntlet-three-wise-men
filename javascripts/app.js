@@ -11,6 +11,12 @@ orc.generateClass();
 orc.setWeapon(new BroadSword());
 console.log(orc.toString());
 
+/****************************************/
+/*      Creating a new Hero              */
+/****************************************/
+
+var hero;
+
 /*
   Test code to generate a spell
  */
@@ -75,12 +81,18 @@ $(document).ready(function() {
   $('.selectClass').click(function () {
     playerName = $('#player-name')[0].value
     //console.log("playerName", playerName);
+
+    // Create new hero object with a name
+    hero = new Gauntlet.Combatants.Player(playerName)
+    console.log("new heroes name", hero.playerName)
   })
 
   // Add event listener to all class buttons
   $('.classButton').click(function(){
     playerClass = $(this).find('.btn__text').text()
 
+    hero.class = playerClass
+    console.log("new heroes class", hero.class)
     if(playerClass.toLowerCase() === "surprise me") {
       console.log("you should make a surprise")
 
@@ -100,10 +112,13 @@ $(document).ready(function() {
     // Check to see if a weapon button is clicked or a child whose parent is a button
     if(target.hasClass("weaponButton")) {
       playerWeapon = target.find('.btn__text').text()
-      console.log(playerWeapon)
+      hero.weapon = playerWeapon
+      console.log("new heroes weapon", playerWeapon)
     }
      else if (target.parent().hasClass("weaponButton")) {
       playerWeapon = target.text()
+      hero.weapon = playerWeapon
+      console.log("new heroes weapon", playerWeapon)
     }
 
   })
