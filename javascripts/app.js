@@ -17,6 +17,8 @@ console.log(orc.toString());
 
 var hero;
 
+var scott = new Gauntlet.Combatants.ScottHumphries()
+
 /*
   Test code to generate a spell
  */
