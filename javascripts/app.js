@@ -52,10 +52,10 @@ $(document).ready(function() {
         moveAlong = ($("#player-name").val() !== "");
         break;
       case "card--weapon":
-        moveAlong = ($("#player-name").val() !== "");
+        moveAlong = ($(".classButton").hasClass("borderClick") ===  true);
         break;
       case "card--battleground":
-        moveAlong = ($("#player-name").val() !== "");
+        moveAlong = ($(".weaponButton").hasClass("borderClick") === true);
         break;
     }
 
