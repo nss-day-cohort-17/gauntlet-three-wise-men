@@ -52,24 +52,37 @@ function attackEachOther() {
             var damage = getWeapon.damage
             console.log(damage)
 
-            //var heroAttack = hero.strength + heroWeaponDamage
+            var heroAttack = (1/hero.strength) + damage
+            console.log(heroAttack)
 
         // Remove attack damage from enemy health
+
+            orc.health = orc.health - heroAttack
+            console.log(orc.health)
 
         // Display enemys health on DOM
 
     // Check if enemy is dead
 
-        // If enemy is dead hero wins - end game
+        if(orc.health <= 0) {
+            // If enemy is dead hero wins - end game
+        }
 
     // Enemy attacks
 
+        // Calculate enemy damage
+        var orcDamage = orc.weapon.damage
+
         // Remove attack damage from hero health
+
+        hero.health = hero.health - orcDamage
+        console.log(hero.health)
 
         // display heros health on DOM
 
     // Check if Hero is dead
 
-        // if hero is dead enemy wins - end game
-
+        if(hero.health <= 0){
+            // if hero is dead enemy wins - end game
+        }
 }
