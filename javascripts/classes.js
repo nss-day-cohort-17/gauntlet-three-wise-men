@@ -37,6 +37,7 @@ Gauntlet.GuildHall.Warrior = function() {
   this.name = "Warrior";
   this.healthBonus = this.healthBonus + 25;
   this.strengthBonus = this.strengthBonus + 30;
+  this.image = "images/warrior.png";
 };
 Gauntlet.GuildHall.Warrior.prototype = new Gauntlet.GuildHall.Fighter();
 
@@ -45,6 +46,7 @@ Gauntlet.GuildHall.Valkyrie = function() {
   this.name = "Valkyrie";
   this.healthBonus = this.healthBonus + 20;
   this.strengthBonus = this.strengthBonus + 10;
+  this.image = "images/valkyrie.png";
 };
 Gauntlet.GuildHall.Valkyrie.prototype = new Gauntlet.GuildHall.Fighter();
 
@@ -87,6 +89,7 @@ Gauntlet.GuildHall.Shaman = function() {
   this.healthBonus = this.healthBonus + 5;
   this.strengthBonus = this.strengthBonus - 10;
   this.intelligenceBonus = this.intelligenceBonus + 20;
+  this.image = "images/shaman.png"
 };
 Gauntlet.GuildHall.Shaman.prototype = new Gauntlet.GuildHall.Mage();
 
@@ -114,6 +117,7 @@ Gauntlet.GuildHall.Sorcerer = function() {
   this.healthBonus = this.healthBonus - 5;
   this.strengthBonus = this.strengthBonus - 20;
   this.intelligenceBonus = this.intelligenceBonus + 30;
+  this.image = "image/sorcerer.png"
 };
 Gauntlet.GuildHall.Sorcerer.prototype = new Gauntlet.GuildHall.Mage();
 
