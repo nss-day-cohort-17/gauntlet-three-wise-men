@@ -111,11 +111,13 @@ $(document).ready(function() {
     // Check to see if a weapon button is clicked or a child whose parent is a button
     if(target.hasClass("weaponButton")) {
       playerWeapon = target.find('.btn__text').text()
+      //console.log(target)
       hero.weapon = playerWeapon
       console.log("new heroes weapon", playerWeapon)
     }
      else if (target.parent().hasClass("weaponButton")) {
       playerWeapon = target.text()
+      //console.log(target)
       hero.weapon = playerWeapon
     }
   })
