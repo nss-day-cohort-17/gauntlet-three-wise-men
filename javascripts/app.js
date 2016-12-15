@@ -123,10 +123,21 @@ $(document).ready(function() {
       console.log("new heroes weapon", playerWeapon)
     }
   })
-});
 
 
-// Event listener on the battlefield button to load the player and enemy to the page // load to app.js
-$('a[next="card--battleground"]').on('click', () => {
+  // Event listener on the battlefield button to load the player and enemy to the page // load to app.js
+  $('a[next="card--battleground"]').on('click', () => {
     loadPlayer();
-})
+  })
+
+
+  // Event listener to attack button and call attackEachOther function when clicked
+  $('#attackBttn').click(function(){
+    //console.log("Attack button clicked!")
+
+    attackEachOther()
+  });
+
+
+
+});
