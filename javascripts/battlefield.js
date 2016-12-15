@@ -116,7 +116,7 @@ function attackEachOther() {
             var damage = getWeapon.damage
             console.log(damage)
 
-            var heroAttack = (1/hero.strength) + damage
+            var heroAttack = (100/hero.strength) * damage
             console.log(heroAttack)
 
         // Remove attack damage from enemy health
