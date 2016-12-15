@@ -148,17 +148,14 @@ body {
 .green {
   background-color: green;
   background-image: linear-gradient(to bottom, green, darkgreen);
-  width: 50%;
 }
 .yellow {
   background-color: #FCFA9D;
   background-image: linear-gradient(to bottom, #FCFA9D, #FAF502);
-  width: 90%;
 }
 .red {
   background-color: #FCFA9D;
   background-image: linear-gradient(to bottom, #f0a3a3, #f42323);
-  width: 75%;
 }
 .grayBack {
   background-color: rgba(180,180,180,0.8);
