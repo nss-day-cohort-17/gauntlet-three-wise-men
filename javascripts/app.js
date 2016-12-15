@@ -80,7 +80,6 @@ $(document).ready(function() {
   // Add event listener to all class buttons
   $('.classButton').click(function(){
     playerClass = $(this).find('.btn__text').text()
-    //console.log("playerClass", playerClass)
   })
 
   // Add event listener to all weapon buttons -- Added to the body because the weapons list is dynamically created
@@ -88,16 +87,16 @@ $(document).ready(function() {
 
     // Do not use "this" because it returns the entire body on click
     // must use event.target in order to get the clicked element
-    console.log(event.target)
 
     var target = $(event.target) // put event.target in a jquery object
 
     // Check to see if a weapon button is clicked or a child whose parent is a button
     if(target.hasClass("weaponButton")) {
-      console.log("weapon button found")
+      playerWeapon = target.find('.btn__text').text()
+      console.log(playerWeapon)
     }
      else if (target.parent().hasClass("weaponButton")) {
-      console.log("span is child of weaponButton")
+      playerWeapon = target.text()
     }
 
   })
