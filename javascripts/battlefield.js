@@ -83,10 +83,8 @@ function addColorClass(healthNow, healthLocal, strengthNow, stengthLocal, intell
     }
 }
 
-// Event listener on attack button click // load to app.js
+
 // Function to calculate damage on attack button click
-
-
 function getWeaponDamage(heroWeaponName){
 
     heroWeaponName = heroWeaponName.split(' ')

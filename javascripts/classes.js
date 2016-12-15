@@ -18,14 +18,26 @@ Gauntlet.GuildHall.PlayerClass = function() {
     return this.name;
   }
 };
-
+/*
+    MAGICAL CLASSES
+      - Shaman
+      - Wizard
+      - Conjurer
+      - Sorcerer
+*/
+/*
+    STEALTH CLASSES
+      - Thief
+      - Ninja
+      - Assassin
+*/
 /*
     FIGHTER CLASSES
       - Warrior
       - Valkyrie
       - Berserker
       - Monk
- */
+*/
 Gauntlet.GuildHall.Fighter = function() {
   this.healthBonus = 20;
   this.strengthBonus = 10;
@@ -71,7 +83,7 @@ Gauntlet.GuildHall.Monk.prototype = new Gauntlet.GuildHall.Fighter();
     MAGICAL CLASSES
       - Shaman
       - Wizard
-      - Conujurer
+      - Conjurer
       - Sorcerer
  */
 Gauntlet.GuildHall.Mage = function() {
