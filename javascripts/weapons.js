@@ -46,7 +46,7 @@ function addWeaponsDOM () {
 
     // Add a new column if the index equals 4
     if(i % 4 === 0) {
-      $(".addWeaponsHere").append(`<div class="weaponColumn col-sm-4"></div>`)
+      $(".addWeaponsHere").append(`<div class="weaponColumn col-sm-offset-4 col-sm-4"></div>`)
       //console.log($('.weaponColumn'))
       //console.log("how many columns weapons", $("body").find(".weaponColumn"))
       columnCount++;
