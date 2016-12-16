@@ -1,7 +1,7 @@
 // --------------------------------------------------------------------------------- //
 function loadPlayer () {
     $('#battlefieldHero').html(hero.playerName);
-    $('#weaponSelection').html(hero.weapon);
+    $('#weaponSelection').html(hero.weapon.name);
     $('#heroSelection').html(hero.class.name);
     $('#playerImage').attr('src', hero.image).width('120%');
     //$('#playerImage').html(hero.image);
@@ -86,7 +86,7 @@ function addColorClass(healthNow, healthLocal, strengthNow, stengthLocal, intell
 }
 
 // Function to calculate damage on attack button click
-function getWeaponDamage(heroWeaponName){
+function getWeaponObject(heroWeaponName){
     heroWeaponName = heroWeaponName.split(' ')
     for(var i = 0; i < heroWeaponName.length; i++){
         heroWeaponName[i] = heroWeaponName[i].split('')
@@ -101,10 +101,7 @@ function attackEachOther() {
     console.log("attackEachOther function called")
     // Hero attacks first
         // Calculate Heroes attack damage
-        var weaponName = getWeaponDamage(hero.weapon);
-        var heroWeapon = eval(weaponName);
-        var getWeapon = new heroWeapon;
-        var damage = getWeapon.damage;
+        var damage = hero.weapon.damage;
         console.log("damage", damage);
 
         var heroAttack = (100/hero.strength) * damage;

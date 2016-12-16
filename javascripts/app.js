@@ -111,18 +111,20 @@ $(document).ready(function() {
     // must use event.target in order to get the clicked element
 
     var target = $(event.target) // put event.target in a jquery object
+    var weaponObject;
 
     // Check to see if a weapon button is clicked or a child whose parent is a button
     if(target.hasClass("weaponButton")) {
       playerWeapon = target.find('.btn__text').text()
-      //console.log(target)
-      hero.weapon = playerWeapon
+      weaponObject = eval(getWeaponObject(playerWeapon))
+      hero.weapon = new weaponObject()
+      console.log(hero.weapon)
       console.log("new heroes weapon", playerWeapon)
     }
      else if (target.parent().hasClass("weaponButton")) {
       playerWeapon = target.text()
-      //console.log(target)
-      hero.weapon = playerWeapon
+      weaponObject = eval(getWeaponObject(playerWeapon))
+      hero.weapon = new weaponObject()
     }
   })
 
