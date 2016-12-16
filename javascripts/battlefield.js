@@ -131,6 +131,7 @@ function attackEachOther() {
                 );
             $('#attackBttn').hide()
             $('#battleBackButtonDiv').before(`<a href="http://localhost:8080"><button>Restart Game?</button></a>`)
+            $('#battleBackButtonDiv').hide()
         }
 
     // Enemy attacks
@@ -155,6 +156,7 @@ function attackEachOther() {
                 );
             $('#attackBttn').hide()
             $('#battleBackButtonDiv').before(`<a href="http://localhost:8080"><button>Restart Game?</button></a>`)
+            $('#battleBackButtonDiv').hide()
 
         }
 }
