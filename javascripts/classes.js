@@ -13,6 +13,7 @@ Gauntlet.GuildHall.PlayerClass = function() {
   this.strengthBonus = 0;
   this.intelligenceBonus = 0;
   this.magical = false;
+  this.image = 'https://avatars3.githubusercontent.com/u/23462252?v=3&s=460'
 
   this.toString = function() {
     return this.name;
