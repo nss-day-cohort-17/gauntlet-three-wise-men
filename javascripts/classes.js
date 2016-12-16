@@ -117,7 +117,7 @@ Gauntlet.GuildHall.Sorcerer = function() {
   this.healthBonus = this.healthBonus - 5;
   this.strengthBonus = this.strengthBonus - 20;
   this.intelligenceBonus = this.intelligenceBonus + 30;
-  this.image = "image/sorcerer.png"
+  this.image = "image/  sorcerer.png"
 };
 Gauntlet.GuildHall.Sorcerer.prototype = new Gauntlet.GuildHall.Mage();
 

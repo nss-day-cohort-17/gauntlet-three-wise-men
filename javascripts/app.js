@@ -63,6 +63,11 @@ $(document).ready(function() {
       $(".card").hide();
       $("." + nextCard).show();
     }
+
+    if (moveAlong === false) {
+      alert('Hey listen! I think you forgot to do something!')
+    }
+
   });
 
   /*
