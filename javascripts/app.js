@@ -51,6 +51,8 @@ $(document).ready(function() {
       case "card--class":
         moveAlong = ($("#player-name").val() !== "");
         break;
+      case "card--path":
+        moveAlong = ($("#"))
       case "card--weapon":
         moveAlong = ($(".classButton").hasClass("borderClick") ===  true);
         break;
