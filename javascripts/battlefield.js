@@ -3,7 +3,7 @@ function loadPlayer () {
     $('#battlefieldHero').html(hero.playerName);
     $('#weaponSelection').html(hero.weapon);
     $('#heroSelection').html(hero.class.name);
-    $('#playerImage').attr('src', hero.image).width('120%');
+    $('#playerImage').attr('src', hero.class.image).width('100%');
     //$('#playerImage').html(hero.image);
     loadEnemy();
 }
