@@ -124,6 +124,8 @@ function attackEachOther() {
                   <h2>${hero.playerName}</h2>
                   <h3>has found glory!!!</h3>`
                 );
+            $('#attackBttn').hide()
+            $('#battleBackButtonDiv').before(`<a href="http://localhost:8080"><button>Restart Game?</button></a>`)
         }
 
     // Enemy attacks
@@ -146,6 +148,8 @@ function attackEachOther() {
                   <h2>${hero.playerName}</h2>
                   <h3>has been defeated.</h3>`
                 );
+            $('#attackBttn').hide()
+            $('#battleBackButtonDiv').before(`<a href="http://localhost:8080"><button>Restart Game?</button></a>`)
 
         }
 }
