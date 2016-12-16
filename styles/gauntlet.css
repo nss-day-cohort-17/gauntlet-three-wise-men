@@ -236,3 +236,8 @@ div .progress {
 .borderClick {
   border: 4px solid black;
 }
+
+.takeFullSize {
+  width: 250px;
+  height: 500px;
+}
