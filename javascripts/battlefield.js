@@ -1,9 +1,13 @@
 // --------------------------------------------------------------------------------- //
+var heroMaxHealth;
+var enemyMaxHealth;
+
 function loadPlayer () {
     $('#battlefieldHero').html(hero.playerName);
     $('#weaponSelection').html(hero.weapon.name);
     $('#heroSelection').html(hero.class.name);
     $('#playerImage').attr('src', hero.class.image).width('100%');
+    heroMaxHealth = hero.health;
     //$('#playerImage').html(hero.image);
     loadEnemy();
 }
@@ -12,23 +16,24 @@ function loadEnemy() {
     $('#enemyWeaponSelection').html(orc.weapon.name);
     $('#enemySelection').html(orc.species);
     $('#enemyImage').attr('src', orc.image).width('100%');
+    enemyMaxHealth = orc.health;
     removeClassColors();
     var playerHealth = hero.health;
     loadPlayerStats(playerHealth);
 }
 
 function loadPlayerStats(health) {
-    let heroHealthNow = (health * 1.3);
+    let heroHealthNow = ((health/heroMaxHealth) * 100);
     let heroHealthLocal = $('#heroHealth');
-    heroHealthLocal.width(heroHealthNow);
+    heroHealthLocal.attr('style', 'width: ' + heroHealthNow + '%');
 
-    let heroStrengthNow = (hero.strength * 1.3);
+    let heroStrengthNow = ((hero.strength/150) * 100);
     let heroStrengthLocal = $('#heroStrength');
-    heroStrengthLocal.width(heroStrengthNow);
+    heroStrengthLocal.attr('style', 'width: ' + heroStrengthNow + '%');
 
-    let heroIntelligenceNow = (hero.intelligence * 1.3);
+    let heroIntelligenceNow = ((hero.intelligence/150) * 100);
     let heroIntelligenceLocal = $('#heroIntelligence');
-    heroIntelligenceLocal.width(heroIntelligenceNow);
+    heroIntelligenceLocal.attr('style', 'width: ' + heroIntelligenceNow + '%');
 
     addColorClass(heroHealthNow, heroHealthLocal, heroStrengthNow, heroStrengthLocal, heroIntelligenceNow, heroIntelligenceLocal);
     let enemyHealth = orc.health;
@@ -36,52 +41,52 @@ function loadPlayerStats(health) {
 }
 
 function loadEnemyStats(health) {
-    let enemyHealthNow = (health * 1.3);
+    let enemyHealthNow = ((health/enemyMaxHealth) * 100);
     let enemyHealthLocal = $('#enemyHealth');
-    enemyHealthLocal.width(enemyHealthNow);
+    enemyHealthLocal.attr('style', 'width: ' + enemyHealthNow + '%');
 
-    let enemyStrengthNow = (orc.strength * 1.3);
+    let enemyStrengthNow = ((orc.strength/150) * 100);
     let enemyStrengthLocal = $('#enemyStrength');
-    enemyStrengthLocal.width(enemyStrengthNow);
+    enemyStrengthLocal.attr('style', 'width: ' + enemyStrengthNow + '%');
 
-    let enemyIntelligenceNow = (orc.intelligence * 1.3)
+    let enemyIntelligenceNow = ((orc.intelligence/150) * 100)
     let enemyIntelligenceLocal = $('#enemyIntelligence');
-    enemyIntelligenceLocal.width(enemyIntelligenceNow);
+    enemyIntelligenceLocal.attr('style', 'width: ' + enemyIntelligenceNow + '%');
 
     addColorClass(enemyHealthNow, enemyHealthLocal, enemyStrengthNow, enemyStrengthLocal, enemyIntelligenceNow, enemyIntelligenceLocal);
 }
 
 function removeClassColors() {
     // if ($('body').hasClass())
-    $('body').find('.green').removeClass('green');
-    $('body').find('.yellow').removeClass('yellow');
-    $('body').find('.red').removeClass('red');
+    $('body').find('.progress-bar-success').removeClass('progress-bar-success');
+    $('body').find('.progress-bar-warning').removeClass('progress-bar-warning');
+    $('body').find('.progress-bar-danger').removeClass('progress-bar-danger');
 }
 
 function addColorClass(healthNow, healthLocal, strengthNow, stengthLocal, intelligenceNow, intelligenceLocal) {
     console.log('healthNow', healthNow);
     if ((healthNow) > 50) {
-        healthLocal.addClass('green')
+        healthLocal.addClass('progress-bar-success')
     } else if ((healthNow) > 25) {
-        healthLocal.addClass('yellow')
+        healthLocal.addClass('progress-bar-warning')
     } else {
-        healthLocal.addClass('red')
+        healthLocal.addClass('progress-bar-danger')
     }
 
     if (strengthNow > 50) {
-        stengthLocal.addClass('green')
+        stengthLocal.addClass('progress-bar-success')
     } else if (strengthNow > 25) {
-        stengthLocal.addClass('yellow')
+        stengthLocal.addClass('progress-bar-warning')
     } else {
-        stengthLocal.addClass('red')
+        stengthLocal.addClass('progress-bar-danger')
     }
 
     if (intelligenceNow > 50) {
-        intelligenceLocal.addClass('green')
+        intelligenceLocal.addClass('progress-bar-success')
     } else if (intelligenceNow > 25) {
-        intelligenceLocal.addClass('yellow')
+        intelligenceLocal.addClass('progress-bar-warning')
     } else {
-        intelligenceLocal.addClass('red')
+        intelligenceLocal.addClass('progress-bar-danger')
     }
 }
 
