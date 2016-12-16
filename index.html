@@ -185,18 +185,12 @@
 
     <section id="battleground" class="card card--battleground">
       <h1 class="centeredTitle">Middle Earth</h1>
-      <div class= "container">
-        <a class="card__back back--battlefield btn btn--small col-md-offset-3"
-           href="#"
-           previous="card--weapon">
-          <span class="btn__prompt">&lt;</span>
-          <span class="btn__text">Back</span>
-        </a>
-
-      </div>
       <div class="container">
         <div class="row">
+
+          <!-- left div -->
           <div class="battlefieldDivs col-sm-4">
+            <!-- left div -->
             <div class="grayBack">
               <h2>Player Stats</h2>
               <p>Health</p>
@@ -212,13 +206,23 @@
                 <span></span>
               </div>
             </div>
-            <h1 class="boxed" id="weaponSelection">Weapon</h1>
-            <h1 class="boxed" id="heroSelection">Hero</h1>
+            <h3 class="boxed" id="weaponSelection">Weapon</h3>
+            <h3 class="boxed" id="heroSelection">Hero</h3>
             <div>
               <img  id='playerImage' src="">
             </div>
           </div>
+
+          <!-- middle div -->
           <div class="battlefieldDivs centerDiv col-sm-4">
+            <div>
+              <a class="card__back back--battlefield btn btn--small"
+                 href="#"
+                 previous="card--weapon">
+                <span class="btn__prompt">&lt;</span>
+                <span class="btn__text">Back</span>
+              </a>
+            </div>
             <button id="attackBttn">Attack!</button>
             <div id="battleResults">
               <h1>Results:</h1>
@@ -227,6 +231,8 @@
               <h3>has been defeated</h3>
             </div>
           </div>
+
+          <!-- right div -->
           <div class="battlefieldDivs col-sm-4">
             <div class="grayBack">
               <h2>Enemy Stats</h2>
@@ -243,8 +249,8 @@
                 <span></span>
               </div>
             </div>
-            <h1 class="boxed" id="enemyWeaponSelection">Weapon</h1>
-            <h1 class="boxed" id="enemySelection">Villain</h1>
+            <h3 class="boxed" id="enemyWeaponSelection">Weapon</h3>
+            <h3 class="boxed" id="enemySelection">Villain</h3>
             <div>
               <img  id='enemyImage' src="">
             </div>

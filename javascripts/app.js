@@ -96,12 +96,15 @@ $(document).ready(function() {
   // Add event listener to all class buttons
   $('.classButton').click(function(){
     playerClass = $(this).find('.btn__text').text()
-// hero = new wizard based on button clicked...
-    hero.class = playerClass
-    if(playerClass.toLowerCase() === "surprise me") {
 
-      // Implement the surprise - maybe make the player
-      // play as the default beggar class?
+    if(playerClass !== 'surprise me'){
+      // Thanks Luke W for giving me this idea
+      hero.class = new Gauntlet.GuildHall[playerClass]
+    }
+
+    else if(playerClass.toLowerCase() === "surprise me") {
+      //console.log(playerClass)
+      hero.class = new Gauntlet.GuildHall.PlayerClass();
     }
   })
 
@@ -112,18 +115,20 @@ $(document).ready(function() {
     // must use event.target in order to get the clicked element
 
     var target = $(event.target) // put event.target in a jquery object
+    var weaponObject;
 
     // Check to see if a weapon button is clicked or a child whose parent is a button
     if(target.hasClass("weaponButton")) {
       playerWeapon = target.find('.btn__text').text()
-      //console.log(target)
-      hero.weapon = playerWeapon
+      weaponObject = eval(getWeaponObject(playerWeapon))
+      hero.weapon = new weaponObject()
+      console.log(hero.weapon)
       console.log("new heroes weapon", playerWeapon)
     }
      else if (target.parent().hasClass("weaponButton")) {
       playerWeapon = target.text()
-      //console.log(target)
-      hero.weapon = playerWeapon
+      weaponObject = eval(getWeaponObject(playerWeapon))
+      hero.weapon = new weaponObject()
     }
   })
 
