@@ -66,11 +66,46 @@ $(document).ready(function() {
       $("." + nextCard).show();
     }
 
-    if (moveAlong === false) {
-      alert('Hey listen! I think you forgot to do something!')
+    //If no name, class or weapon selected, an alert will pop up.
+
+    if (moveAlong === false && ($("#player-name").val() == "")) {
+      alert('Hey listen! I\'d call you by your name, but I don\'t know it!')
+    } else if
+      (moveAlong === false && ($(".classButton").hasClass("borderClick") === false)) {
+      alert('I personally recommend you choose to be surprised')
+    } else if
+      (moveAlong === false &&            ($(".weaponButton").hasClass("borderClick") === false)) {
+      alert('It\'s dangerous to go out alone! Take a weapon!')
     }
 
   });
+
+  // enter key
+
+  $("#player-name").keypress(function(e) {
+    var nextCard = $(this).attr("next");
+    var moveAlong = false;
+
+
+    if (($("#player-name").val() !== "" && e.key === 'Enter')) {
+      moveAlong = true;
+      nextCard = 'card--class'
+    }
+
+    if (moveAlong) {
+      $(".card").hide();
+      $("." + nextCard).show();
+    }
+
+    // If no name, class or weapon selected, an alert will pop up.
+
+    if (moveAlong === false && (e.key === "Enter")) {
+      alert('Hey listen! I\'d call you by your name, but I don\'t know it!')
+    };
+
+  });
+
+
 
   /*
     When the back button clicked, move back a view
@@ -94,6 +129,18 @@ $(document).ready(function() {
     // Create new hero object with a name
     hero = new Gauntlet.Combatants.Player(playerName)
   })
+
+  $('#player-name').keypress(function (e) {
+    if (e.keyCode === 13) {
+    playerName = $('#player-name')[0].value
+    //console.log("playerName", playerName);
+
+    // Create new hero object with a name
+    hero = new Gauntlet.Combatants.Player(playerName)
+    }
+  })
+
+
 
   // Add event listener to all class buttons
   $('.classButton').click(function(){
