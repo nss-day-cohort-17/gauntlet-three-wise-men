@@ -33,6 +33,7 @@ var playerName;
 var playerClass;
 var playerWeapon;
 
+
 $(document).ready(function() {
   /*
     Show the initial view that accepts player name
@@ -66,13 +67,13 @@ $(document).ready(function() {
       $("." + nextCard).show();
     }
 
-    //If no name, class or weapon selected, an alert will pop up.
+    //If no name, class or weapon selected and user tries to advance to next page, an alert will pop up.
 
     if (moveAlong === false && ($("#player-name").val() == "")) {
       alert('Hey listen! I\'d call you by your name, but I don\'t know it!')
     } else if
       (moveAlong === false && ($(".classButton").hasClass("borderClick") === false)) {
-      alert('I personally recommend you choose to be surprised')
+      alert('I personally recommend you choose to be surprised.')
     } else if
       (moveAlong === false &&            ($(".weaponButton").hasClass("borderClick") === false)) {
       alert('It\'s dangerous to go out alone! Take a weapon!')
@@ -80,7 +81,7 @@ $(document).ready(function() {
 
   });
 
-  // enter key
+  // If the enter key is pressed on the input field, it will advance to the next page
 
   $("#player-name").keypress(function(e) {
     var nextCard = $(this).attr("next");
@@ -97,7 +98,7 @@ $(document).ready(function() {
       $("." + nextCard).show();
     }
 
-    // If no name, class or weapon selected, an alert will pop up.
+    // If no name is inserted and the enter is pressed an alert will pop up.
 
     if (moveAlong === false && (e.key === "Enter")) {
       alert('Hey listen! I\'d call you by your name, but I don\'t know it!')
@@ -238,3 +239,7 @@ $('.weaponButton').focus(function(event) {
     $('.borderClick').removeClass('borderClick')
   }
 })
+
+//set the audio volume
+
+$("audio").prop("volume", 0.2);
