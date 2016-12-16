@@ -3,7 +3,7 @@ function loadPlayer () {
     $('#battlefieldHero').html(hero.playerName);
     $('#weaponSelection').html(hero.weapon.name);
     $('#heroSelection').html(hero.class.name);
-    $('#playerImage').attr('src', hero.image).width('120%');
+    $('#playerImage').attr('src', hero.class.image).width('100%');
     //$('#playerImage').html(hero.image);
     loadEnemy();
 }
@@ -122,12 +122,11 @@ function attackEachOther() {
 
     // Enemy attacks
         // Calculate enemy damage
-        var orcDamage = orc.weapon.damage
+        var orcDamage = (100/orc.strength) * orc.weapon.damage;
 
         // Remove attack damage from hero health
-
-        hero.health = hero.health - orcDamage
-        console.log(hero.health)
+        hero.health = hero.health - orcDamage;
+        console.log(hero.health);
 
         // display heroes health on DOM
         loadPlayerStats(hero.health);
