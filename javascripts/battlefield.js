@@ -120,7 +120,7 @@ function attackEachOther() {
     // Check if enemy is dead
         if (orc.health <= 0) {
             // If enemy is dead hero wins - end game
-            alert("Game over. You win!!!");
+            return alert("Game over. You win!!!");;
         }
 
     // Enemy attacks
@@ -138,6 +138,6 @@ function attackEachOther() {
     // Check if Hero is dead
         if (hero.health <= 0){
             // if hero is dead enemy wins - end game
-            alert('Game over. You lose.')
+            return alert('Game over. You lose.');
         }
 }
