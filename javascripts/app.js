@@ -122,15 +122,31 @@ $(document).ready(function() {
     // Check to see if a weapon button is clicked or a child whose parent is a button
     if(target.hasClass("weaponButton")) {
       playerWeapon = target.find('.btn__text').text()
-      weaponObject = eval(getWeaponObject(playerWeapon))
-      hero.weapon = new weaponObject()
-      console.log(hero.weapon)
-      console.log("new heroes weapon", playerWeapon)
+
+      if(playerWeapon === "bare hands") {
+        console.log("you have bear hands")
+        hero.weapon = new Weapon();
+      }
+      else {
+        weaponObject = eval(getWeaponObject(playerWeapon))
+        hero.weapon = new weaponObject()
+        console.log(hero.weapon)
+        console.log("new heroes weapon", playerWeapon)
+      }
     }
-     else if (target.parent().hasClass("weaponButton")) {
+    else if (target.parent().hasClass("weaponButton")) {
       playerWeapon = target.text()
-      weaponObject = eval(getWeaponObject(playerWeapon))
-      hero.weapon = new weaponObject()
+
+      if(playerWeapon === "bare hands") {
+        console.log("you have bear hands")
+        hero.weapon = new Weapon();
+      }
+      else {
+        weaponObject = eval(getWeaponObject(playerWeapon))
+        hero.weapon = new weaponObject()
+        console.log(hero.weapon)
+        console.log("new heroes weapon", playerWeapon)
+      }
     }
   })
 
