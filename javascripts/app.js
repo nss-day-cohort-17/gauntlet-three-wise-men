@@ -64,11 +64,55 @@ $(document).ready(function() {
       $("." + nextCard).show();
     }
 
+    //If no name, class or weapon selected, an alert will pop up.
+
     if (moveAlong === false) {
       alert('Hey listen! I think you forgot to do something!')
     }
 
   });
+
+  // enter key
+
+  $(".field__textinput").keypress(function(e) {
+    var nextCard = $(this).attr("next");
+    var moveAlong = false;
+
+    if (e.key === "Enter" && ($("#player-name").val() !== "")) {
+      console.log('hello');
+      moveAlong = true;
+      nextCard = "card--class"
+    } 
+
+    //   switch (nextCard) {
+    //     case "card--class":
+    //       moveAlong = ($("#player-name").val() !== "");
+    //     break;
+    //
+    //     case "card--weapon":
+    //     moveAlong = ($(".classButton").hasClass("borderClick") ===  true);
+    //     break;
+    //   case "card--battleground":
+    //     moveAlong = ($(".weaponButton").hasClass("borderClick") === true);
+    //     break;
+    // }
+
+  // }
+
+    if (moveAlong) {
+      $(".card").hide();
+      $("." + nextCard).show();
+    }
+
+    //If no name, class or weapon selected, an alert will pop up.
+
+    // if (moveAlong === false) {
+    //   alert('Hey listen! I think you forgot to do something!')
+    // }
+
+  });
+
+
 
   /*
     When the back button clicked, move back a view
