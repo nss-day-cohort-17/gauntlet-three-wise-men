@@ -242,4 +242,4 @@ $('.weaponButton').focus(function(event) {
 
 //set the audio volume
 
-$("audio").prop("volume", 0.2);
+$("audio").prop("volume", 0.7);
