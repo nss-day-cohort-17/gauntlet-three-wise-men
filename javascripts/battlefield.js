@@ -125,12 +125,11 @@ function attackEachOther() {
 
     // Enemy attacks
         // Calculate enemy damage
-        var orcDamage = orc.weapon.damage
+        var orcDamage = orc.weapon.damage;
 
         // Remove attack damage from hero health
-
-        hero.health = hero.health - orcDamage
-        console.log(hero.health)
+        hero.health = hero.health - orcDamage;
+        console.log(hero.health);
 
         // display heroes health on DOM
         loadPlayerStats(hero.health);
