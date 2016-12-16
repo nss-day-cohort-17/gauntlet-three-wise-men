@@ -194,7 +194,10 @@ body {
 #battleResults h3 {
   margin-bottom: 0.2em;
 }
-
+div .progress {
+  margin: 0;
+  height: 0.4em;
+}
 /* Jared's CSS that is probably going to break Joel's */
 
 .back--battlefield {
