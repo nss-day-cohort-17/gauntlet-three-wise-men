@@ -92,15 +92,14 @@ $(document).ready(function() {
   $('.classButton').click(function(){
     playerClass = $(this).find('.btn__text').text()
 
-    // Thanks Luke W for giving me this idea
-    hero.class = new Gauntlet.GuildHall[playerClass]
-    console.log(hero.class)
+    if(playerClass !== 'surprise me'){
+      // Thanks Luke W for giving me this idea
+      hero.class = new Gauntlet.GuildHall[playerClass]
+    }
 
-
-    if(playerClass.toLowerCase() === "surprise me") {
-
-      // Implement the surprise - maybe make the player
-      // play as the default beggar class?
+    else if(playerClass.toLowerCase() === "surprise me") {
+      //console.log(playerClass)
+      hero.class = new Gauntlet.GuildHall.PlayerClass();
     }
   })
 
