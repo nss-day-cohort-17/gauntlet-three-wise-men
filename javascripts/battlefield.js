@@ -7,10 +7,12 @@ function loadPlayer () {
     $('#weaponSelection').html(hero.weapon.name);
     $('#heroSelection').html(hero.class.name);
     $('#playerImage').attr('src', hero.class.image).width('100%');
+    // move to a function to run on a loop while page is loaded
+    animateImages();
     heroMaxHealth = hero.health;
-    //$('#playerImage').html(hero.image);
     loadEnemy();
 }
+
 
 function loadEnemy() {
     $('#enemyWeaponSelection').html(orc.weapon.name);
@@ -20,6 +22,15 @@ function loadEnemy() {
     removeClassColors();
     var playerHealth = hero.health;
     loadPlayerStats(playerHealth);
+}
+
+function animateImages () {
+    for (let i = 0; i < 50; i++) {
+        $('#playerImage').animate({ width: "80%"} , 1500);
+        $('#playerImage').animate({ width: "100%"} , 1500);
+        $('#enemyImage').animate({ width: "80%" } , 1500);
+        $('#enemyImage').animate({ width: "100%" } , 1500);
+    }
 }
 
 function loadPlayerStats(health) {
@@ -107,10 +118,7 @@ function attackEachOther() {
     // Hero attacks first
         // Calculate Heroes attack damage
         var damage = hero.weapon.damage;
-        console.log("damage", damage);
-
         var heroAttack = (100/hero.strength) * damage;
-        console.log("attack", heroAttack);
 
         // Remove attack damage from enemy health
         orc.health = orc.health - heroAttack;
