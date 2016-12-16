@@ -13,8 +13,8 @@ function loadEnemy() {
     $('#enemySelection').html(orc.species);
     $('#enemyImage').attr('src', orc.image).width('100%');
     removeClassColors();
-    var orcHealth = orc.health;
-    loadPlayerStats(orcHealth);
+    var playerHealth = hero.health;
+    loadPlayerStats(playerHealth);
 }
 
 function loadPlayerStats(health) {
@@ -120,7 +120,12 @@ function attackEachOther() {
     // Check if enemy is dead
         if (orc.health <= 0) {
             // If enemy is dead hero wins - end game
-            alert("Game over. You win!!!");
+            $('#battleResults').html(
+                `<h1>Results:</h1>
+                  <h3>Your hero,</h3>
+                  <h2>${hero.playerName}</h2>
+                  <h3>has found glory!!!</h3>`
+                );
         }
 
     // Enemy attacks
@@ -137,6 +142,11 @@ function attackEachOther() {
     // Check if Hero is dead
         if (hero.health <= 0){
             // if hero is dead enemy wins - end game
-            alert('Game over. You lose.')
+            $('#battleResults').html(
+                `<h1>Results:</h1>
+                  <h3>Your hero,</h3>
+                  <h2>${hero.playerName}</h2>
+                  <h3>has been defeated.</h3>`
+                );
         }
 }
