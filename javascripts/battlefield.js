@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------- //
 function loadPlayer () {
-    $('#battlefieldHero').html('bob');
+    $('#battlefieldHero').html(hero.playerName);
     $('#weaponSelection').html(hero.weapon);
     $('#heroSelection').html(hero.class.name);
     $('#playerImage').attr('src', hero.image).width('120%');
